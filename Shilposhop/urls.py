@@ -19,16 +19,16 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
-    path('products/', include('products_app.urls')),
-    path('payments/', include('payments_app.urls')),
-    path('orders/', include('orders_app.urls')),
-=======
 
     path('products/', include('products_app.urls')),
     path('payments/', include('payments_app.urls')),
     path('orders/', include('orders_app.urls')),
 
->>>>>>> 14027be4848c782c6e76b3b4189e7eaff589bdf1
+
+    path('products/', include('products_app.urls')),
+    path('payments/', include('payments_app.urls')),
+    path('orders/', include('orders_app.urls')),
+
+
 
 ]
