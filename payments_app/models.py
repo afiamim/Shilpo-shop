@@ -9,19 +9,14 @@ from orders_app.models import Order
 class Payment(models.Model):
 
     METHOD_CHOICES = [
-
         ('Cash', 'Cash'),
-
         ('Card', 'Card'),
-
         ('Bkash', 'Bkash'),
 
     ]
 
     STATUS_CHOICES = [
-
         ('Pending', 'Pending'),
-
         ('Completed', 'Completed'),
 
     ]
@@ -45,5 +40,4 @@ class Payment(models.Model):
     )
 
     def __str__(self):
-
         return self.payment_method
