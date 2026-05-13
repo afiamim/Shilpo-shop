@@ -8,4 +8,3 @@ urlpatterns = [
     path('delete/<int:id>/',views.delete_review,name='delete_review'),
 ]
 
-]
