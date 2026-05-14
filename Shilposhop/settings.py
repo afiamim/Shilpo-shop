@@ -62,7 +62,7 @@ ROOT_URLCONF = 'Shilposhop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,7 +77,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Shilposhop.wsgi.application'
 
 
-
+# Database
+# https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -87,7 +88,8 @@ DATABASES = {
 }
 
 
-
+# Password validation
+# https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
