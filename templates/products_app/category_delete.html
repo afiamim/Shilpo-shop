@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Delete Category - ShilpoShop{% endblock %}
+{% block content %}
 
-</body>
-</html>
+<div class="confirm-box">
+    <h2>Delete Category?</h2>
+    <p>
+        Are you sure you want to delete <strong>{{ category.name }}</strong>?<br>
+        <span style="color:#c62828; font-size:13px;">
+            Warning: All products in this category will also be deleted.
+        </span>
+    </p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-red">Yes, Delete</button>
+        <a href="{% url 'category_list' %}" class="btn btn-gray" style="margin-left:8px;">Cancel</a>
+    </form>
+</div>
+
+{% endblock %}
