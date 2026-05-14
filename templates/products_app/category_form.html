@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}{% if category %}Edit{% else %}Add{% endif %} Category - ShilpoShop{% endblock %}
+{% block content %}
 
-</body>
-</html>
+<div class="form-container" style="max-width:440px;">
+    <h2>{% if category %}Edit Category{% else %}Add New Category{% endif %}</h2>
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="field-row">
+            <label>{{ field.label }}</label>
+            {{ field }}
+            {% if field.errors %}
+                {% for error in field.errors %}
+                    <div class="form-error">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        {% endfor %}
+        <div style="display:flex; gap:10px; margin-top:16px;">
+            <button type="submit" class="btn btn-green">Save</button>
+            <a href="{% url 'category_list' %}" class="btn btn-gray">Cancel</a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
