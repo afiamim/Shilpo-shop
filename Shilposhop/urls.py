@@ -26,7 +26,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
-    path('users/', include('users_app.urls')),
     path('products/', include('products_app.urls')),
     path('payments/', include('payments_app.urls')),
     path('orders/', include('orders_app.urls')),
